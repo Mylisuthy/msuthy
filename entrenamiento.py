@@ -51,3 +51,20 @@ if Temperatura.replace('.', '', 1).isdigit() or (Temperatura[0] == '-' and Tempe
     print(f"Su temperatura en Fahrenheit: {Temperatura} \nSu temperatura en Celsius: {temperatura_c}")
 else:
     print("La temperatura se mide con números, ¿no?")
+    
+ #6) Solicitar el costo de la comida al usuario
+preciocomida = int(input("¿Cuánto costó la comida? "))
+
+# Calcular las propinas
+p10porciento = preciocomida * 0.10
+p15porciento = preciocomida * 0.15
+p20porciento = preciocomida * 0.20
+
+# Calcular los totales a pagar
+t10pagar = p10porciento + preciocomida
+t15pagar = p15porciento + preciocomida
+t20pagar = p20porciento + preciocomida
+# Mostrar los resultados
+print (f"precio {preciocomida}$-propina {p10porciento}$\ntotal a pagar {t10pagar}$".upper())
+print (f"precio {preciocomida}$-propina {p15porciento}$\ntotal a pagar {t15pagar}$".upper())
+print (f"precio {preciocomida}$-propina {p20porciento}$\ntotal a pagar {t20pagar}$".upper())
