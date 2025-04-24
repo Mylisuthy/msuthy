@@ -67,7 +67,3 @@ def main():
     
     # Mostrar el resultado
     mostrar_resultados(nombre_producto, costo_total)
-
-# Ejecutar el programa
-if __name__ == "__main__":
-    main()
