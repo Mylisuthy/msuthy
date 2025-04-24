@@ -172,6 +172,6 @@ def mostrar_resultados(nombre_producto, costo_total):
 1. **Validación**: Siempre asegúrate de que las entradas del usuario sean válidas. El uso de ciclos `while` y el manejo de excepciones (`try-except`) son excelentes formas de asegurarte de que el programa se ejecute sin problemas.
 2. **Formato de salida**: Mostrar los resultados con formato (en este caso, dos decimales y el símbolo `$`) hace que la salida sea más profesional y fácil de entender.
 
-## Ejecutando el Programa
+## al Ejecutar el Programa
 
-El código puede ejecutarse directamente desde la terminal de tu computadora. Al ejecutar el archivo, el programa te pedirá que ingreses los datos y luego te mostrará el costo total de la compra.
+Al ejecutar el archivo, el programa te pedirá que ingreses los datos y luego te mostrará el costo total de la compra.
