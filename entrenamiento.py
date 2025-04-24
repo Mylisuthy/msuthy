@@ -1,5 +1,5 @@
 # 1) invertir valores
-a = float(input("Dame dame un numero "))
+a = float(input("Dame un numero "))
 b = float(input("Dame el otro uwu "))
 print(f"Sus numeros son {a}, y {b}")
 a,b = b, a
@@ -68,3 +68,26 @@ t20pagar = p20porciento + preciocomida
 print (f"precio {preciocomida}$-propina {p10porciento}$\ntotal a pagar {t10pagar}$".upper())
 print (f"precio {preciocomida}$-propina {p15porciento}$\ntotal a pagar {t15pagar}$".upper())
 print (f"precio {preciocomida}$-propina {p20porciento}$\ntotal a pagar {t20pagar}$".upper())
+
+# 7) Extraer digitos de un numero de 4 cifras
+
+#peticion de digitos al usuario
+Digito = int(input("dame un digito de 4 sifras: "))
+#se cambia el formato a texto para facilitar su lectura
+cadena = str(Digito)
+#se añaden las "," (queria que la "," se implementara cada 2 digitos)
+resultado = ','.join([cadena[i:i+2] for i in range(0, len(cadena), 2)])
+#se imprime el mensaje
+print(f"estos son tus numeros separados por coma: {resultado}")
+
+# 8) formato de precio con 2 decimales
+
+#se define la variable que se usara
+primerP = float("dame tu primer digito: ")
+segundoP = float("dame el segundo numero: ")
+#suma de variables
+resultado = primerP + segundoP
+#mostrar el resultado
+print (f"este es tu precio ${resultado} :3")
+
+# 9) 
