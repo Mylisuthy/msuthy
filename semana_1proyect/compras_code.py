@@ -1,69 +1,82 @@
-def obtener_dato_producto():
-    # Pedir nombre del producto
-    nombre_producto = input("Ingrese el nombre del producto: ")
-    return nombre_producto
+# Sistema de Cálculo de Costo Total con Descuento
 
-def obtener_precio_unitario():
-    # Pedir precio unitario y validar que sea positivo
+# Paso 1: Mostrar mensaje de bienvenida
+print("Bienvenido al Sistema de Cálculo de Costo Total con Descuento")
+
+# Paso 2: Creamos una variable para acumular el total general
+totalg = 0
+
+# Paso 3: Preguntar cuántos productos se van a calcular
+while True:
+    try:
+        cantidadProd = int(input("¿cuantos productos vas a comprar?: "))
+        if cantidadProd > 0:
+            break #se usa para salir del bucle si el caracter es valido
+        else:
+            print("seguro que tienes 0 productos?")
+    except ValueError:
+        print:("tal vez no entendi bien el numero, me lo repites po fa: ")        
+
+# Paso 4: Repetir el proceso por cada producto
+for i in range(cantidadProd):
+    print(f"\ndime el producto #{i + 1}") # Mostrar el número del producto
+
+    # Solicitar nombre del producto (que solo contenga letras y espacios)
+    while True:
+        nombre = input("dame el nombre del producto: ")
+        if nombre.replace(" ", "").isalpha(): # Elimina espacios y verifica que sean solo letras
+            break
+        else:
+            print("yo pienso que un nombre solo debe llebar letras, tu que opinas?: ")
+
+    # Validar precio
     while True:
         try:
-            precio_unitario = float(input("Ingrese el precio unitario del producto: "))
-            if precio_unitario <= 0:
-                print("El precio debe ser un número positivo. Intente nuevamente.")
+            precio = float(input("que precio tiene el producto? ($):")) # Convertimos a decimal (float)
+            if precio > 0:
+                break
             else:
-                return precio_unitario
+                print("creo que dijiste mal el precio, repitemelo po favo")
         except ValueError:
-            print("Debe ingresar un número válido para el precio. Intente nuevamente.")
+            print("po favooo, ingresa un numero") # Si el dato no es numérico, mostramos error
 
-def obtener_cantidad():
-    # Pedir cantidad y validar que sea un número entero positivo
+    # Validar cantidad
     while True:
         try:
-            cantidad = int(input("Ingrese la cantidad de productos: "))
-            if cantidad <= 0:
-                print("La cantidad debe ser un número entero positivo. Intente nuevamente.")
+            cantidad = int(input("cantidad: ")) # Convertimos a número entero
+            if cantidad > 0:
+                break
             else:
-                return cantidad
+                print("la cantidad cuando compras indica los productos que quieres llevarte si no te llevaras ninguno que quieres que te cobre?")
         except ValueError:
-            print("Debe ingresar un número entero válido para la cantidad. Intente nuevamente.")
+            print("por favor, dime en realidad cuantos productos quieres comprar: ")        
 
-def obtener_descuento():
-    # Pedir descuento y validar que esté entre 0 y 100
+    # Validar descuento
     while True:
         try:
-            descuento = float(input("Ingrese el porcentaje de descuento (0 a 100): "))
+            descuento = float(input("dime el porsentaje del descuento: "))
             if 0 <= descuento <= 100:
-                return descuento
+                break
             else:
-                print("El descuento debe estar entre 0 y 100. Intente nuevamente.")
+                print("el descuento debe ser un numero 0 y 100...\nsi me dices que es 120 me estarias robando carnal.")
         except ValueError:
-            print("Debe ingresar un número válido para el descuento. Intente nuevamente.")
+            print("dime de nuevo el descuento porfa.")        
 
-def calcular_costo_total(precio_unitario, cantidad, descuento):
-    # Calcular costo sin descuento
-    costo_sin_descuento = precio_unitario * cantidad
-    
-    # Aplicar descuento si es necesario
-    if descuento > 0:
-        costo_con_descuento = costo_sin_descuento * (1 - descuento / 100)
-    else:
-        costo_con_descuento = costo_sin_descuento
-    
-    return costo_con_descuento
+    # Calcular el costo sin descuento
+    subtotal = precio * cantidad
 
-def mostrar_resultados(nombre_producto, costo_total):
-    # Mostrar el costo total con 2 decimales
-    print(f"\nEl costo total de la compra del producto '{nombre_producto}' es: ${costo_total:.2f}")
+    # Calcular el monto de descuento
+    condescuento = subtotal * (descuento / 100)
 
-def main():
-    # Obtener datos del usuario
-    nombre_producto = obtener_dato_producto()
-    precio_unitario = obtener_precio_unitario()
-    cantidad = obtener_cantidad()
-    descuento = obtener_descuento()
-    
-    # Calcular el costo total
-    costo_total = calcular_costo_total(precio_unitario, cantidad, descuento)
-    
-    # Mostrar el resultado
-    mostrar_resultados(nombre_producto, costo_total)
+    # Calcular el total con descuento
+    total = subtotal - condescuento
+
+    # Sumar al total general
+    totalg += total
+
+    # Mostrar el resultado de este producto
+    print (f"entonces te vas a llevar '{cantidad}' '{nombre}' que en total te costara: ${total:.2f}")
+
+# Mostrar el total de toda la compra
+print(f"el total a pagar es: ${totalg:.2f}")
+
