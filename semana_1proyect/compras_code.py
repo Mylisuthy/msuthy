@@ -1,7 +1,7 @@
 # Sistema de Cálculo de Costo Total con Descuento
 
 # Paso 1: Mostrar mensaje de bienvenida
-print("Bienvenido al Sistema de Cálculo de Costo Total con Descuento")
+print("bienvenido al Sistema de Cálculo de Costo Total con Descuento")
 
 # Paso 2: Creamos una variable para acumular el total general
 totalg = 0
@@ -27,7 +27,7 @@ for i in range(cantidadProd):
         if nombre.replace(" ", "").isalpha(): # Elimina espacios y verifica que sean solo letras
             break
         else:
-            print("yo pienso que un nombre solo debe llebar letras, tu que opinas?: ")
+            print("yo pienso que un nombre solo debe llevar letras, tu que opinas?: ")
 
     # Validar precio
     while True:
@@ -54,11 +54,11 @@ for i in range(cantidadProd):
     # Validar descuento
     while True:
         try:
-            descuento = float(input("dime el porsentaje del descuento: "))
+            descuento = int(input("dime el porsentage del descuento: "))
             if 0 <= descuento <= 100:
                 break
             else:
-                print("el descuento debe ser un numero 0 y 100...\nsi me dices que es 120 me estarias robando carnal.")
+                print("el descuento debe ser un numero 0 y 100...\nsi me dices que es mas que 100 o menos que 0 si se llamaria descuento?.")
         except ValueError:
             print("dime de nuevo el descuento porfa.")        
 
