@@ -1,0 +1,5 @@
+suma=lambda y,a,b:(y,b*a+(a+b))
+y=input("ingresa una palabra:").strip().title()
+a=int(input("Ingresa un número:"))
+b=int(input("Ingresa un número:"))
+print(suma(y,a,b))
