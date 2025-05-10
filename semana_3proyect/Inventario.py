@@ -16,7 +16,18 @@ Structures used:
 
 - Constant interaction through a menu displayed in the terminal.
 #
-inventory = {}
+inventory = {
+    "rice": (2.90, 25.0, "kg"),
+    "eggs": (0.20, 60, "units"),
+    "milk": (1.10, 18.0, "kg"),
+    "bread": (1.25, 30, "units"),
+    "sugar": (2.50, 10.0, "kg"),
+    "apples": (1.80, 12.5, "kg"),
+    "oranges": (2.00, 8.0, "kg"),
+    "water bottles": (0.90, 24, "units"),
+    "flour": (1.60, 15.0, "kg"),
+    "cheese": (3.75, 5.0, "kg")
+}
 
 # Function to normalize product names
 def normalize_name(name):
