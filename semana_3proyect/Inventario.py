@@ -1,21 +1,19 @@
+#    Program: Inventory Management System
+#    Author: juanch0 (Coder of Riwi Medellín clan linus) 
+#    Description:
+#    This program allows to manage the inventory of a store interactively from the VS Code terminal.
+#    Functionalities:
+#    - Add products to the inventory with name, price, quantity and unit type (kg or units).
+#   - Search for a specific product and view its details
+#    - Update the price of an existing product
+#    - Remove products from inventory with user confirmation
+#    - Calculate total inventory value using lambda functions.
 #
-Program: Inventory Management System
-Author: juanch0 (Coder of Riwi Medellín clan linus) 
-Description:
-This program allows to manage the inventory of a store interactively from the VS Code terminal.
-Functionalities:
-- Add products to the inventory with name, price, quantity and unit type (kg or units).
-- View all stored products
-- Search for a specific product and view its details
-- Update the price of an existing product
-- Remove products from inventory with user confirmation
-- Calculate total inventory value using lambda functions.
-
-Structures used:
-- Main dictionary `inventory` where the key is the product name and the value is a tuple (price, quantity, unit_type).
-
-- Constant interaction through a menu displayed in the terminal.
+#    Structures used:
+#    - Main dictionary `inventory` where the key is the product name and the value is a tuple (price, quantity, unit_type).
 #
+#    - Constant interaction through a menu displayed in the terminal.
+
 inventory = {
     "rice": (2.90, 25.0, "kg"),
     "eggs": (0.20, 60, "units"),
