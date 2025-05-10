@@ -1,98 +1,95 @@
-**Desarrollado por:** Juan David (Pk)  
-**Semana:** 3 – Entrenamiento en Python  
-**Proyecto:** Gestión de inventario con funciones y colecciones  
-**Lenguaje:** Python 3.x  
+# 🧾 Inventory Management System
+
+**Author:** juanch0 (Coder at Riwi Medellín, clan Linus)  
+**Language:** Python 3  
+**Interface:** Terminal (Recommended in Visual Studio Code)
 
 ---
 
-## 📌 Descripción del proyecto
+## 📌 Description
 
-Este programa es un sistema de **gestión de inventario** interactivo que permite administrar productos de una tienda. Está construido usando funciones, colecciones (`diccionarios`, `tuplas`, `listas`) y programación funcional con `lambda`.
-
-El usuario puede:
-
-- Añadir productos con nombre, precio y cantidad
-- Consultar un producto por nombre
-- Mostrar todos los productos del inventario
-- Actualizar el precio de un producto
-- Eliminar productos con confirmación
-- Calcular el valor total del inventario (precio × cantidad) usando `lambda`
+This is a terminal-based interactive Inventory Management System designed to help users manage product stock in a store. It enables the addition, display, search, update, and deletion of products, as well as calculating the total value of all inventory items. It was built to reinforce concepts of functions, dictionaries, input validation, and lambda functions in Python.
 
 ---
 
-## 🧱 Estructura del programa
+## ⚙️ Features
 
-El programa está organizado en funciones específicas para cada operación:
+- ✅ Add products with a name, price, quantity, and unit type (either kilograms or units).
+- 📋 Show all products currently stored in the inventory.
+- 🔍 Search for a specific product by name and view its details.
+- 🔁 Update the price of any existing product.
+- ❌ Remove products from the inventory with user confirmation.
+- 💰 Calculate the **total inventory value** using a lambda-powered expression.
 
-| Función | Descripción |
-|--------|-------------|
-| `añadir_producto()` | Añade un producto nuevo al inventario |
-| `consultar_producto()` | Busca un producto y muestra su precio y cantidad |
-| `mostrar_inventario()` | Lista todos los productos guardados |
-| `actualizar_precio()` | Cambia el precio de un producto existente |
-| `eliminar_producto()` | Permite eliminar un producto con confirmación |
-| `calcular_valor_total()` | Calcula el valor total del inventario usando `lambda` |
-| `pedir_dato_numerico()` | Valida la entrada numérica del usuario |
+---
 
-Todos los datos se almacenan en un diccionario de la forma:
+## 🧠 Data Structures Used
+
+- **Main structure:** A `dictionary` named `inventory`, where:
+  - The **key** is the product name (string).
+  - The **value** is a tuple: `(price: float, quantity: float/int, unit_type: str)`.
+
+- **Input validation:** Custom numeric input validation functions to ensure data integrity.
+
+- **Lambda function:** Used to calculate total inventory value concisely.
+
+---
+
+## 🛒 Sample Inventory
+
 ```python
-inventario = {
-  "manzana": (1.5, 10),
-  "arroz": (2.0, 5.5)
+inventory = {
+    "rice": (2.90, 25.0, "kg"),
+    "eggs": (0.20, 60, "units"),
+    "milk": (1.10, 18.0, "kg"),
+    "bread": (1.25, 30, "units"),
+    "sugar": (2.50, 10.0, "kg"),
+    "apples": (1.80, 12.5, "kg"),
+    "oranges": (2.00, 8.0, "kg"),
+    "water bottles": (0.90, 24, "units"),
+    "flour": (1.60, 15.0, "kg"),
+    "cheese": (3.75, 5.0, "kg")
 }
 ```
-🔑 La clave es el nombre del producto.  
-📦 El valor es una tupla con `(precio, cantidad)`.
 
 ---
 
-## 🧑‍💻 Cómo usarlo
+## 📂 Main Functions
 
-1. Ejecuta el archivo Python (`.py`).
-2. Usa el menú interactivo para navegar:
-```
-1. Añadir producto
-2. Mostrar todos los productos
-3. Consultar producto
-4. Actualizar precio
-5. Eliminar producto
-6. Calcular valor total del inventario
-0. Salir
-```
-3. Ingresa los datos solicitados (nombre, precio, cantidad).
-4. Sigue las instrucciones que aparecen en pantalla.
+- `normalize_name(name)`: Cleans and standardizes product names.
+- `is_float(value)`: Checks if a value is a valid float.
+- `request_numeric_data(...)`: Prompts and validates numeric input.
+- `add_item(...)`: Adds a product to the inventory.
+- `show_all_items()`: Displays all inventory items.
+- `consulter_item(name)`: Displays the details of a specific item.
+- `update_price(name, new_price)`: Updates the price of an item.
+- `remove_item(name)`: Deletes an item with confirmation.
+- `calculate_total_value()`: Computes total inventory value.
 
 ---
 
-## 🚨 Manejo de errores
+## 🖥️ How to Use
 
-El programa incluye validaciones para:
-
-- ❌ Entradas no numéricas en precio y cantidad
-- 🔁 Opción no válida en el menú
-- 🔎 Búsquedas de productos inexistentes
-- ⚠️ Intento de duplicar productos ya existentes
-- 🔙 Cancelar operaciones presionando `ENTER`
-- 🛑 Confirmaciones para eliminar productos
-
----
-
-## 💡 Características adicionales
-
-✅ Permite cantidades en **kilos (float)** o **unidades (int)**  
-✅ Opción para **cancelar** operaciones como eliminación y búsqueda  
-✅ Uso de **funciones lambda** para el cálculo total  
-✅ Modularidad, limpieza y comentarios explicativos en el código  
-✅ Listo para pasar un examen de calidad de software (QA)
+1. Run the script using Python in a terminal (recommended: Visual Studio Code).
+2. Use the interactive menu to manage the inventory:
+   ```
+   1. Add product
+   2. Show all products
+   3. Consult product
+   4. Update price
+   5. Remove product
+   6. Calculate total value
+   0. Exit
+   ```
+3. Follow on-screen prompts for each action. Inputs are validated to avoid errors.
 
 ---
 
-## 📂 Archivos incluidos
+## 🏁 Final Notes
 
-```
-inventario.py         # Código fuente principal
-README.md             # Documentación explicativa (este archivo)
-```
+- This project is part of an educational exercise at **Riwi Medellín**.
+- It's designed for learners with basic Python knowledge (Week 3 level).
+- The code is modular, clear, and ready to be expanded (e.g., with persistence using JSON, logs, or a GUI).
 
 ---
 
